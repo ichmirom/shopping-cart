@@ -12,12 +12,18 @@ const Counter = (props) => {
         classes += value === 0 ? 'bg-warning' : 'bg-primary'
         return classes
     }
+    
+    const handleIncrement = () => { // ну это не обязательно 
+        const { id, onIncrement } = props;
+        
+        onIncrement(id);
+    }
 
     return (
         <div>
             <span>{props.name}</span>
             <span className={getBadgeClasses()}>{formatCount()}</span>
-            <button className='btn btn-primary btn-sm m-2' onClick={() => props.onIncrement(props.id)}>+</button>
+            <button className='btn btn-primary btn-sm m-2' onClick={() => props.onIncrement(props.id)}>+</button> // так тоже пойдет, но луче 
             <button className='btn btn-primary btn-sm m-2' onClick={() => props.onDecrement(props.id)}>-</button>
             <button className="btn btn-danger btn-sm m-2" onClick={() => props.onDelete(props.id)}>Delete</button>
         </div>
