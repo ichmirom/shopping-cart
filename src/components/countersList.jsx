@@ -22,7 +22,7 @@ const CountersList = () => {
 
     const handleIncrement = (id) => {
         const updatedState = [...counters]
-        updatedState[id].value++
+        updatedState[id].value++ // id - может не совпадать с индексом
         setCounters(updatedState)
     }
 
