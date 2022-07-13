@@ -22,13 +22,15 @@ const CountersList = () => {
 
     const handleIncrement = (id) => {
         const updatedState = [...counters]
-        updatedState[id].value++
+        const counterFoundById = updatedState.find(counter => counter.id === id)
+        counterFoundById.value++
         setCounters(updatedState)
     }
 
     const handleDecrement = (id) => {
         const updatedState = [...counters]
-        updatedState[id].value--
+        const counterFoundById = updatedState.find(counter => counter.id === id)
+        counterFoundById.value--
         setCounters(updatedState)
     }
 
