@@ -36,11 +36,13 @@ const CountersList = () => {
 
     return (
         <>
-            {counters.map(count => <Counter key={count.id}
-                                            {...count}
-                                            onDelete={handleDelete}
-                                            onIncrement={handleIncrement}
-                                            onDecrement={handleDecrement}/>)}
+            {counters.map(count => 
+                <Counter key={count.id}
+                    {...count}
+                    onDelete={handleDelete}
+                    onIncrement={handleIncrement}
+                    onDecrement={handleDecrement}
+                />)}
             <button className="btn btn-primary btn-sm m-2" onClick={handleReset}>Сброс</button>
         </>
     )
